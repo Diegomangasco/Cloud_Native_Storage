@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Create the two users pods
 k create -f user-1.yaml
 k create -f user-2.yaml
