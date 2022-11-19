@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Start minikube
 minikube start --disk-size=40g --extra-disks=1 --driver kvm2 -n 2
 
