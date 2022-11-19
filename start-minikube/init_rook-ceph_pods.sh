@@ -2,7 +2,7 @@
 minikube start --disk-size=40g --extra-disks=1 --driver kvm2 -n 2
 
 # Rook-Ceph pods init
-cd rook/deploy/examples
+cd ../setup/rook/deploy/examples
 k create -f crds.yaml -f common.yaml -f operator.yaml
 k create -f cluster-test.yaml -f filesystem-test.yaml -f nfs-test.yaml
 
