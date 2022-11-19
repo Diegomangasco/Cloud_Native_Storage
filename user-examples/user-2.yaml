@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: user-2
+  labels:
+    app: ubuntu
+spec:
+  containers:
+  - image: ubuntu
+    command:
+      - "sleep"
+      - "604800"
+    volumeMounts:
+    - mountPath: /my-nfs-share
+      name: user-2
+    imagePullPolicy: IfNotPresent
+    name: ubuntu
+  restartPolicy: Always
+  volumes:
+  - name: user-2
+    nfs:
+      server: [IP address of the service patched]
+      path: /test
+      readOnly: false
