@@ -4,7 +4,7 @@
 minikube start --disk-size=40g --extra-disks=1 --driver kvm2 -n 2
 
 # Rook-Ceph pods init
-cd ../setup/rook/deploy/examples
+cd /rook/deploy/examples
 k create -f crds.yaml -f common.yaml -f operator.yaml
 k create -f cluster-test.yaml -f filesystem-test.yaml -f nfs-test.yaml
 
@@ -23,6 +23,3 @@ ceph nfs export ls my-nfs
 ceph mgr module disable nfs 
 ceph mgr module disable rook
 exit
-
-# Patch the service as a NodePort
-k patch service -n rook-ceph -p '{"spec":{"type": "NodePort"}}' rook-ceph-nfs-my-nfs-a
