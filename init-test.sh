@@ -24,3 +24,4 @@ for FILE in "crds.yaml" "common.yaml" "operator.yaml" "cluster-test.yaml" "files
 do
     kubectl create -f $BASE_URL$FILE
 done
+kubectl --namespace rook-ceph patch configmap rook-ceph-operator-config --type merge --patch '{"data":{"ROOK_CSI_ENABLE_NFS": "true"}}'
