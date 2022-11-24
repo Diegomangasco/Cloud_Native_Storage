@@ -18,7 +18,6 @@ spec:
   restartPolicy: Always
   volumes:
   - name: user-2
-    nfs:
-      server: [IP address of the service patched]
-      path: /test
-      readOnly: false
+    persistentVolumeClaim:
+      claimName: nfs-pvc-user-2
+      readonly: false
