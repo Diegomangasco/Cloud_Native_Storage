@@ -21,4 +21,4 @@ spec:
   - name: user-2
     persistentVolumeClaim:
       claimName: nfs-pvc-user-2
-      readonly: false
+      readOnly: false
