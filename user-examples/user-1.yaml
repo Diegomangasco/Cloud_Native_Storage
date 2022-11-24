@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: user-1
+  namespace: user-1-namespace
   labels:
     app: ubuntu
 spec:
