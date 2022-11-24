@@ -12,7 +12,7 @@ sudo modprobe -a kvm
 sudo modprobe -a kvm_intel
 } &> /dev/null
 
-minikube start --disk-size=8g --extra-disks=1 --driver kvm2 -n 4 --memory 4096 --cpus 2
+minikube start --disk-size=8g --extra-disks=1 --driver kvm2 -n 4 --memory 3072 --cpus 2
 
 echo 'source <(kubectl completion bash)' >> ~/.bashrc
 echo 'alias k=kubectl' >> ~/.bashrc
