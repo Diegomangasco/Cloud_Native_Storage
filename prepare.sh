@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "This script will install all the necessary tools"
-echo -n "Installing pachages..."
+echo -n "Installing packages..."
 
 {
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
