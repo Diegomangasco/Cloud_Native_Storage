@@ -19,5 +19,5 @@ echo "Installed go version: $(go version)"
 echo "Launching instance operator..."
 wget https://github.com/netgroup-polito/CrownLabs/archive/refs/heads/master.tar.gz
 tar -xf master.tar.gz
-cd Crownlabs-master/operators && make install && make run-instance &> instance-operator.log &
+cd CrownLabs-master/operators && make install && make run-instance &> instance-operator.log &
 echo "Launched!
