@@ -21,7 +21,7 @@ wget https://github.com/netgroup-polito/CrownLabs/archive/refs/heads/master.tar.
 tar -xf master.tar.gz &> /dev/null
 rm master.tar.gz
 echo "Installing CRDs and operators..."
-cd CrownLabs-master/operators; make install
+( cd CrownLabs-master/operators && make install )
 echo "Starting Instance operator..."
-cd CrownLabs-master/operators; make run-instance &> ~/instance-operator.log &
+( cd CrownLabs-master/operators && make run-instance &> ~/instance-operator.log ) &
 echo "Launched!
