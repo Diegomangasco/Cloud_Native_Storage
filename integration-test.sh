@@ -24,4 +24,4 @@ echo "Installing CRDs and operators..."
 ( cd CrownLabs-master/operators && make install )
 echo "Starting Instance operator..."
 ( cd CrownLabs-master/operators && make run-instance &> ~/instance-operator.log ) &
-echo "Launched!
+echo "Launched!"
