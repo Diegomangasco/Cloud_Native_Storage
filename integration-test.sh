@@ -20,5 +20,5 @@ echo "Launching instance operator..."
 wget https://github.com/netgroup-polito/CrownLabs/archive/refs/heads/master.tar.gz
 tar -xf master.tar.gz
 cd CrownLabs-master/operators && make install
-cd CrownLabs-master/operators && make run-instance &> instance-operator.log &
+cd CrownLabs-master/operators && make run-instance &> ~/instance-operator.log &
 echo "Launched!
