@@ -9,7 +9,7 @@ wget https://go.dev/dl/go1.16.linux-amd64.tar.gz
 tar -xf go1.16.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
 sudo mv go /usr/local
-sudo apt install make
+sudo apt install make gcc
 
 rm go1.16.linux-amd64.tar.gz
 echo "PATH=\$PATH:/usr/local/go/bin" >> $HOME/.bashrc
