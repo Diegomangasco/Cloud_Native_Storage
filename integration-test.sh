@@ -5,8 +5,8 @@ echo "Waiting for CRDs to deploy..."
 kubectl wait --for condition=established crd/virtualmachines.kubevirt.io &> /dev/null
 echo "kubevirt deployed!"
 
-wget https://go.dev/dl/go1.16.linux-amd64.tar.gz
-tar -xf go1.16.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.16.linux-amd64.tar.gz &> /dev/null
+tar -xf go1.16.linux-amd64.tar.gz &> /dev/null
 sudo rm -rf /usr/local/go
 sudo mv go /usr/local
 sudo apt install -y make gcc
@@ -17,8 +17,11 @@ source $HOME/.bashrc
 
 echo "Installed go version: $(go version)"
 echo "Launching instance operator..."
-wget https://github.com/netgroup-polito/CrownLabs/archive/refs/heads/master.tar.gz
-tar -xf master.tar.gz
+wget https://github.com/netgroup-polito/CrownLabs/archive/refs/heads/master.tar.gz &> /dev/null
+tar -xf master.tar.gz &> /dev/null
+rm master.tar.gz
+echo "Installing CRDs and operators..."
 cd CrownLabs-master/operators && make install
+echo "Starting Instance operator..."
 cd CrownLabs-master/operators && make run-instance &> ~/instance-operator.log &
 echo "Launched!
