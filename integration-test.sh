@@ -16,12 +16,16 @@ echo "PATH=\$PATH:/usr/local/go/bin" >> $HOME/.bashrc
 source $HOME/.bashrc
 
 echo "Installed go version: $(go version)"
-echo "Launching instance operator..."
-wget https://github.com/netgroup-polito/CrownLabs/archive/refs/heads/master.tar.gz &> /dev/null
-tar -xf master.tar.gz &> /dev/null
-rm master.tar.gz
-echo "Installing CRDs and operators..."
-( cd CrownLabs-master/operators && make install )
-echo "Starting Instance operator..."
-( cd CrownLabs-master/operators && make run-instance &> ~/instance-operator.log ) &
-echo "Launched!"
+
+BRANCH=${1:-"nfs-storage"}
+echo "Using branch: $BRANCH"
+wget https://github.com/matteorosani/CrownLabs/archive/refs/heads/$BRANCH.tar.gz &> /dev/null
+tar -xf $BRANCH.tar.gz &> /dev/null
+rm $BRANCH.tar.gz
+mv CrownLabs-$BRANCH CrownLabs
+echo -n "Installing CRDs and operators..."
+( cd CrownLabs/operators && make install )
+echo "Done!"
+echo -n "Starting Instance operator..."
+( cd CrownLabs/operators && make run-instance &> ~/instance-operator.log ) &
+echo "Done!"
