@@ -13,7 +13,7 @@ sudo apt install -y make gcc
 
 rm go1.16.linux-amd64.tar.gz
 echo "PATH=\$PATH:/usr/local/go/bin" >> $HOME/.bashrc
-source $HOME/.bashrc
+PATH=$PATH:/usr/local/go/bin
 
 echo "Installed go version: $(go version)"
 
