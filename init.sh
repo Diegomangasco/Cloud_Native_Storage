@@ -17,7 +17,9 @@ minikube start --disk-size=8g --extra-disks=1 --driver kvm2 -n 4 --memory 3072 -
 echo 'source <(kubectl completion bash)' >> ~/.bashrc
 echo 'alias k=kubectl' >> ~/.bashrc
 echo 'complete -F __start_kubectl k' >> ~/.bashrc
-source ~/.bashrc
+source <(kubectl completion bash)
+alias k=kubectl
+complete -F __start_kubectl k
 
 BASE_URL="https://raw.githubusercontent.com/rook/rook/v1.10.0/deploy/examples/"
 for FILE in "crds.yaml" "common.yaml" "operator.yaml" "cluster.yaml" "filesystem.yaml" "nfs.yaml" "csi/nfs/rbac.yaml" "csi/nfs/storageclass.yaml"
