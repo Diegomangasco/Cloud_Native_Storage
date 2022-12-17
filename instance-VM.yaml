@@ -48,7 +48,7 @@ spec:
       guiEnabled: false
       persistent: false
       resources:
-        cpu: 2
+        cpu: 3
         memory: 3G
         reservedCPUPercentage: 25
       containerStartupOptions:
