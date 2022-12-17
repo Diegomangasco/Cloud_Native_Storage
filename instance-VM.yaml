@@ -7,7 +7,7 @@ metadata:
 spec:
   prettyName: A test workspace
   quota:
-    cpu: 2
+    cpu: 3
     memory: "4Gi"
     instances: 2
 ---
