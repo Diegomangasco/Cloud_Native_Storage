@@ -7,7 +7,7 @@ metadata:
 spec:
   prettyName: A test workspace
   quota:
-    cpu: 3
+    cpu: 4
     memory: "4Gi"
     instances: 2
 ---
@@ -49,7 +49,7 @@ spec:
       persistent: false
       resources:
         cpu: 2
-        memory: 2G
+        memory: 3G
         reservedCPUPercentage: 25
       containerStartupOptions:
         startupArgs:
