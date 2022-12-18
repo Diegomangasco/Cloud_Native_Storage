@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -n "Enabling kubevirt..."
 minikube addons enable kubevirt &> /dev/null
-kubectl wait --for condition=established crd/virtualmachines.kubevirt.io > /dev/null
+while ! kubectl get crd virtualmachines.kubevirt.io &> /dev/null ; do sleep 1; done
 echo "Done!"
 
 echo -n "Installing go..."
